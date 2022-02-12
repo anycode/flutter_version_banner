@@ -1,7 +1,7 @@
 library version_banner;
 
 import 'package:flutter/widgets.dart';
-import 'package:package_info/package_info.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 
 /// Version Banner Widget
 ///
@@ -116,8 +116,6 @@ class VersionBanner extends StatelessWidget {
                 } else {
                   isDev = true;
                 }
-
-
 
                 if (isDev) {
                   return Directionality(
