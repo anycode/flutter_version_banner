@@ -9,7 +9,7 @@ void main() {
 class MyApp extends StatelessWidget {
   final bool isDevVersion;
 
-  MyApp(this.isDevVersion);
+  const MyApp(this.isDevVersion, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,11 +19,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
 
     if (isDevVersion) {
-      return VersionBanner(packageExtensions: ["example"], child: materialApp);
+      return VersionBanner(
+          packageExtensions: const ["example"], child: materialApp);
     }
 
     return materialApp;
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
   final String title;
 
   @override
@@ -57,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
+            const Text(
               'You have pushed the button this many times:',
             ),
             Text(
@@ -70,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }
