@@ -108,7 +108,7 @@ class VersionBanner extends StatelessWidget {
                 if (packageExtensions != null) {
                   for (var package in packageExtensions!) {
                     if (snapshot.data != null &&
-                        snapshot.data!.packageName.contains(package)) {
+                        snapshot.data!.packageName.endsWith(package)) {
                       isDev = true;
                       break;
                     }
