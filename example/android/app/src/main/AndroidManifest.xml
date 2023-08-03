@@ -1,8 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.example">
+    package="com.example.version.banner">
    <application
         android:label="version_banner"
-        android:name="Version Banner"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
