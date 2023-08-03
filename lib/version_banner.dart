@@ -2,6 +2,7 @@ library version_banner;
 
 import 'package:flutter/widgets.dart';
 import 'package:package_info_plus/package_info_plus.dart';
+import 'package:version_banner/enum.dart';
 
 /// Version Banner Widget
 ///
@@ -81,6 +82,8 @@ class VersionBanner extends StatelessWidget {
   /// the banner will not be shown.
   final List<String>? packageExtensions;
 
+  final VersionBannerExtensionHandling extensionHandling;
+
   VersionBanner({
     required this.child,
     this.text,
@@ -89,6 +92,7 @@ class VersionBanner extends StatelessWidget {
         color: Color.fromARGB(255, 255, 255, 255), fontWeight: FontWeight.bold),
     this.color = const Color.fromARGB(255, 255, 0, 0),
     this.visible = true,
+    this.extensionHandling = VersionBannerExtensionHandling.packageContainDev,
     this.packageExtensions,
   });
 
@@ -108,7 +112,10 @@ class VersionBanner extends StatelessWidget {
                 if (packageExtensions != null) {
                   for (var package in packageExtensions!) {
                     if (snapshot.data != null &&
-                        snapshot.data!.packageName.contains(package)) {
+                        isPackageNameMeetExtension(
+                          snapshot.data!.packageName,
+                          package,
+                        )) {
                       isDev = true;
                       break;
                     }
@@ -157,5 +164,16 @@ class VersionBanner extends StatelessWidget {
 
     /// The banner is not visible, return the child instead
     return child;
+  }
+
+  bool isPackageNameMeetExtension(
+    String appPackageName,
+    String packageNameToMatch,
+  ) {
+    if (this.extensionHandling ==
+        VersionBannerExtensionHandling.packageContainDev)
+      return appPackageName.contains(packageNameToMatch);
+
+    return appPackageName.endsWith(packageNameToMatch);
   }
 }
