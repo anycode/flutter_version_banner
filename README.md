@@ -25,7 +25,7 @@ VersionBanner(
       );
 ```
 
-`packageExtensions` will check the app's package name with the given array. If the package name contains part of the String in the array, then the banner is visible.
+`packageExtensions` will check the app's package name with the given array. If the package name ends with any of the String in the array, then the banner is visible.
 
 The following properties can be changed:
 
@@ -33,5 +33,5 @@ The following properties can be changed:
 * `textStyle` -  Banner's text style
 * `text` - The text to appear. If set to null will show the `pubspec` version
 * `location` - the banner's location on the screen, based on the class [BannerLocation](https://api.flutter.dev/flutter/widgets/BannerLocation-class.html)
-* `packageExtensions` - will check the app's package name with the given array. If the package name contains part of the String in the array, then the banner is visible.
+* `packageExtensions` - will check the app's package name with the given array. If the package name ends with any of the String in the array, then the banner is visible.
 * `visible` - decides if the banner is visible or not. If set to `false`, it overrides the `packageExtensions` attribute
