@@ -2,11 +2,9 @@
 
 An app Banner Widget that shows the current app version. Can be used with [App Flavors](https://flutter.dev/docs/deployment/flavors) to show what flavor of the app is currently being used.
 
-
 ## Getting Started
 
-
-This widget should wrap `MaterialApp` or `CupertinoApp`. 
+This widget should wrap `MaterialApp` or `CupertinoApp`.
 
 ![Example](https://user-images.githubusercontent.com/10728633/59044609-5aa82c00-8876-11e9-99d2-da84a81af2e6.png)
 
@@ -14,6 +12,7 @@ This widget should wrap `MaterialApp` or `CupertinoApp`.
 VersionBanner(
           text: "Yay!",
           packageExtensions: [".dev"],
+          extensionHandling: VersionBannerExtensionHandling.packageContainDev,
           child: MaterialApp(
                        debugShowCheckedModeBanner: false,
                        title: 'Flutter Demo',
@@ -25,13 +24,18 @@ VersionBanner(
       );
 ```
 
-`packageExtensions` will check the app's package name with the given array. If the package name contains part of the String in the array, then the banner is visible.
+`packageExtensions` will check the app's package name with the given array based on value of `extensionHandling`.
+
+[Original/Default Behavior] If `extensionHandling` is `VersionBannerExtensionHandling.packageContainDev` and the package name contains part of the String in the array, then the banner is visible.
+
+If `extensionHandling` is `VersionBannerExtensionHandling.packageSuffixDev` and the package name ends with any of the String in the array, then the banner is visible.
 
 The following properties can be changed:
 
-* `color` - Banner's color
-* `textStyle` -  Banner's text style
-* `text` - The text to appear. If set to null will show the `pubspec` version
-* `location` - the banner's location on the screen, based on the class [BannerLocation](https://api.flutter.dev/flutter/widgets/BannerLocation-class.html)
-* `packageExtensions` - will check the app's package name with the given array. If the package name contains part of the String in the array, then the banner is visible.
-* `visible` - decides if the banner is visible or not. If set to `false`, it overrides the `packageExtensions` attribute
+- `color` - Banner's color
+- `textStyle` - Banner's text style
+- `text` - The text to appear. If set to null will show the `pubspec` version
+- `location` - the banner's location on the screen, based on the class [BannerLocation](https://api.flutter.dev/flutter/widgets/BannerLocation-class.html)
+- `packageExtensions` - will check the app's package name with the given array and decide the banner's visibility
+- `extensionHandling` - will control the behavior for `packageExtensions` to work
+- `visible` - decides if the banner is visible or not. If set to `false`, it overrides the `packageExtensions` attribute
