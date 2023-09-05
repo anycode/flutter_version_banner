@@ -23,8 +23,7 @@ class MyApp extends StatelessWidget {
     );
 
     if (isDevVersion) {
-      return VersionBanner(
-          packageExtensions: const ["example"], child: materialApp);
+      return VersionBanner(packageExtensions: const ["example"], child: materialApp);
     }
 
     return materialApp;

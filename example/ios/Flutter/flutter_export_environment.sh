@@ -1,6 +1,6 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
-export "FLUTTER_ROOT=/opt/flutter-sdk/3.10.5"
+export "FLUTTER_ROOT=/opt/flutter-sdk/3.10.6"
 export "FLUTTER_APPLICATION_PATH=/home/edlman/Zdrojaky/src/flutter/lib/flutter_version_banner/example"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_TARGET=lib/main.dart"
