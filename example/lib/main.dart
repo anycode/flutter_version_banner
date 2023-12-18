@@ -22,11 +22,13 @@ class MyApp extends StatelessWidget {
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
 
-    if (isDevVersion) {
-      return VersionBanner(packageExtensions: const ["example"], child: materialApp);
-    }
-
-    return materialApp;
+    return VersionBanner(
+      packageExtensions: const ["example"],
+      text: 'dev',
+      // uncomment if want to use suffix
+      // extensionHandling: VersionBannerExtensionHandling.packageSuffixDev,
+      child: materialApp,
+    );
   }
 }
 
