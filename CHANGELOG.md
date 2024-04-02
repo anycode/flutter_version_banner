@@ -1,3 +1,15 @@
+## [2.0.2]
+
+* Upgrade gradle files
+
+## [2.0.1]
+
+* Merge upstream changes, update deps
+
+## [2.0.0]
+
+* Upgrade for Flutter 3.10, Dart 3. 
+
 # [1.0.0-nullsafety.0]
 * Null safety migration via [#3](https://github.com/Vanethos/flutter_version_banner/pull/3), thanks to corentingiraud 
 ## 0.2.1
