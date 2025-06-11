@@ -1,9 +1,9 @@
-name: version_banner
+name: ac_version_banner
 description: A banner that shows the current version or flavour of the app
-version: 2.0.3
-homepage: https://github.com/Vanethos/flutter_version_banner
-issue_tracker: https://github.com/Vanethos/flutter_version_banner/issues
-publish_to: https://pub.anycode.dev
+version: 2.0.4
+homepage: https://github.com/anycode/flutter_version_banner
+issue_tracker: https://github.com/anycode/flutter_version_banner/issues
+#publish_to: https://pub.anycode.dev
 
 environment:
   sdk: ">=3.0.0 <4.0.0"

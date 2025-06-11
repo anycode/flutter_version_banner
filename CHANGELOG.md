@@ -1,3 +1,7 @@
+## [2.0.4]
+
+* Rename package to ac_version_banner, as the original package seems to be abandoned
+
 ## [2.0.3]
 
 * Upgrade dependencies

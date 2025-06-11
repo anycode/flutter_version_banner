@@ -1,6 +1,18 @@
 # Version Banner
 
+[![pub package](https://img.shields.io/pub/v/ac_geojson.svg)](https://pub.dev/packages/ac_version_banner)
+[![license](https://img.shields.io/badge/license-BSD%202-green)](https://github.com/anycode/flutter_version_banner/blob/main/LICENSE)
+[![style: effective dart](https://img.shields.io/badge/style-effective_dart-40c4ff.svg)](https://dart.dev/guides/language/effective-dart)
+
 An app Banner Widget that shows the current app version. Can be used with [App Flavors](https://flutter.dev/docs/deployment/flavors) to show what flavor of the app is currently being used.
+
+## Package name change
+
+The original package [*flutter_version_banner*](https://github.com/FaganOoi/flutter_version_banner) 
+is still available on pub.dev but seems not to
+be maintained. There's my PR for Dart 3 from May 7th 2024 not accepted yet.
+
+That's why I published my version as *ac_version_banner*.
 
 ## Getting Started
 

@@ -1,0 +1,4 @@
+enum VersionBannerExtensionMatching {
+  contains,
+  endsWith,
+}

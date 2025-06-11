@@ -1,8 +1,24 @@
+/*
+ * Copyright 2025 Martin Edlman - Anycode <ac@anycode.dev>
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 library version_banner;
 
 import 'package:flutter/widgets.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-import 'package:version_banner/enum.dart';
+import 'package:ac_version_banner/src/enum.dart';
 
 /// Version Banner Widget
 ///
@@ -82,7 +98,7 @@ class VersionBanner extends StatelessWidget {
   /// the banner will not be shown.
   final List<String>? packageExtensions;
 
-  final VersionBannerExtensionHandling extensionHandling;
+  final VersionBannerExtensionMatching extensionMatching;
 
   VersionBanner({
     required this.child,
@@ -92,7 +108,7 @@ class VersionBanner extends StatelessWidget {
         color: Color.fromARGB(255, 255, 255, 255), fontWeight: FontWeight.bold),
     this.color = const Color.fromARGB(255, 255, 0, 0),
     this.visible = true,
-    this.extensionHandling = VersionBannerExtensionHandling.packageContainDev,
+    this.extensionMatching = VersionBannerExtensionMatching.contains,
     this.packageExtensions,
   });
 
@@ -170,8 +186,8 @@ class VersionBanner extends StatelessWidget {
     String appPackageName,
     String packageNameToMatch,
   ) {
-    if (this.extensionHandling ==
-        VersionBannerExtensionHandling.packageContainDev)
+    if (this.extensionMatching ==
+        VersionBannerExtensionMatching.contains)
       return appPackageName.contains(packageNameToMatch);
 
     return appPackageName.endsWith(packageNameToMatch);

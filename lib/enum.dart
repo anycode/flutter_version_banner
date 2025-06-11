@@ -1,4 +1,0 @@
-enum VersionBannerExtensionHandling {
-  packageContainDev,
-  packageSuffixDev,
-}
